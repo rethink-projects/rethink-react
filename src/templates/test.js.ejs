@@ -1,0 +1,17 @@
+
+import React from 'react';
+import { shallow } from 'enzyme';
+import <%= props.name %> from './<%= props.name %>';
+
+describe('<<%= props.name %> />', () => {
+  let wrapper;
+  let mockProps;
+  beforeEach(() => {
+    mockProps = {};
+    wrapper = shallow(<<%= props.name %> {...mockProps} />);
+  });
+
+  it('should render whithout explode', () => {
+    expect(wrapper.length).toBe(1);
+  });
+});
