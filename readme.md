@@ -1,25 +1,106 @@
 # rethink-react CLI
 
-A CLI for rethink-react.
+Work easily with rethink struture pattern in react.
 
-## Customizing your CLI
+## How to install:
 
-Check out the documentation at https://github.com/infinitered/gluegun/tree/master/docs.
+#### With YARN
 
-## Publishing to NPM
-
-To package your CLI up for NPM, do this:
-
-```shell
-$ npm login
-$ npm whoami
-$ npm lint
-$ npm test
-(if typescript, run `npm run build` here)
-$ npm publish
+```
+"yarn add global rethink-react"
 ```
 
-# License
+#### With NPM
 
-MIT - see LICENSE
+```
+"npm install -g rethink-react"
+```
 
+## How work with:
+
+After install you can open your rethink react-native app and run:
+
+```
+rethink-gen create-component ComponentName
+```
+
+or shorthand
+
+```
+rethink-gen cc ComponentName
+```
+
+this command will generate a `component` like `src/components/ComponentName`
+
+with this following structure:
+
+```
+  src
+  -- components
+  ---- ComponentName
+  ------ index.js
+  ------ ComponentName.js
+  ------ ComponentName.test.js
+  ------ styled.js
+```
+
+> or
+
+```
+rethink-gen create-module MyModule
+```
+
+or shorthand
+
+```
+rethink-gen cm MyModule
+```
+
+this command will generate a `modules` like `src/components/`
+
+with this following structure:
+
+```
+  src
+  -- modules
+  ---- MyModule
+  ------ actions
+  -------- index.js
+
+  ------ components
+  -------- index.js
+
+  ------ reducers
+  -------- MyModuleReducer.js
+  -------- index.js
+
+  ------ screens
+  -------- MyModuleScreen.js
+  -------- styled.js
+
+  ------ types
+  -------- index.js
+```
+
+> and
+
+```
+rethink-gen store-redux
+```
+
+or shorthand
+
+```
+rethink-gen sr
+```
+
+this command will generate a `store` folder in `src/`
+
+```
+src
+-- store
+---- reducers.js
+---- store.js
+```
+
+Help us...

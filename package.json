@@ -2,9 +2,8 @@
   "name": "rethink-react",
   "version": "0.0.1",
   "description": "rethink-react CLI",
-  "private": true,
   "bin": {
-    "rethink-react": "bin/rethink-react"
+    "rethink-gen": "bin/rethink-react"
   },
   "scripts": {
     "format": "prettier --write **/*.{js,json} && standard --fix",
