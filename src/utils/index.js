@@ -11,7 +11,7 @@ const helpMessage = [
   [
     'create-component',
     'cc',
-    'Create a Component at src/components/ \n-> Options: \n  --pure for PureComponent \n  --stateless for Stateless \n  -web for Web (can be used with previous)'
+    'Create a Component at src/components/ \n-> Options: \n  --pure for PureComponent \n  --stateless for Stateless \n  --module moduleName (creating component inside model) \n  -web for Web (can be used with previous)'
   ],
   ['create-module', 'cm', 'Create a Module at modules/'],
   [

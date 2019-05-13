@@ -44,9 +44,10 @@ can specify type of component
 $ rethink-gen create-component ComponentName [options]
 
 Options:
-  -pure        create a PureComponent
-  -stateless   create a Stateless Component
-  -web         create a Web Component (can be used with previous)
+  --pure        create a PureComponent
+  --stateless   create a Stateless Component
+  --module      ModuleName create a component inside some module
+  --web         create a Web Component (TODO)
 ```
 
 this command will generate a `component` like `src/components/ComponentName`
@@ -73,6 +74,20 @@ with this following structure:
 
 ![Create Module](https://github.com/filiperethink/rethink-react/blob/master/images/ss-create-module.png?raw=true)
 
+> Creating a Screen inside some Module
+
+```
+$ rethink-gen create-screen MyScreen -m MyModule
+```
+
+or shorthand
+
+```
+$ rethink-gen cs MyScreen -m MyModule
+```
+
+this command will generate a `modules` like `src/modules/MyModule/screens/MyScreen.js`
+
 > Creating a Redux Store
 
 ```
@@ -97,8 +112,8 @@ $ rethink-gen help
 
 ### What you can do:
 
-- [ ] Be possible to create a component inside `src/module/components/NewComponent`
-- [ ] Be possible to create a screen inside `src/module/screens/NewScreen.js`
+- [x] Be possible to create a component inside `src/module/components/NewComponent`
+- [x] Be possible to create a screen inside `src/module/screens/NewScreen.js`
 - [x] Be possible to create stateless component. ex: `rethink-gen cc ComponentName -stateless`
 - [x] Be possible to create pure component. ex: `rethink-gen cc ComponentName -pure`
 - [ ] Be possible to work with web too \*now work's onl with react-native. ex: `rethink-gen cc ComponentName -web`
