@@ -34,15 +34,7 @@ this command will generate a `component` like `src/components/ComponentName`
 
 with this following structure:
 
-```
-  src
-  -- components
-  ---- ComponentName
-  ------ index.js
-  ------ ComponentName.js
-  ------ ComponentName.test.js
-  ------ styled.js
-```
+![Create Component](('./images/ss-create-component.png')
 
 > or
 
