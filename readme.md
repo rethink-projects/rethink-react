@@ -1,4 +1,4 @@
-# rethink-react CLI
+# Rethink React CLI
 
 Work easily with rethink struture pattern in react.
 
@@ -73,3 +73,11 @@ this command will generate a `store` folder in `src/`
 ![Create Store](https://github.com/filiperethink/rethink-react/blob/master/images/ss-store-redux.png?raw=true)
 
 Help rethink dev's to improve this cli.
+
+### What you can do:
+
+- [ ] Be possible to create a component inside `src/module/components/NewComponent`
+- [ ] Be possible to create a screen inside `src/module/screens/NewScreen.js`
+- [ ] Be possible to create stateless component. ex: `rethink-gen cc ComponentName -stateless`
+- [ ] Be possible to create pure component. ex: `rethink-gen cc ComponentName -pure`
+- [ ] Be possible to work with web too \*now work's onl with react-native. ex: `rethink-gen cc ComponentName -web`
