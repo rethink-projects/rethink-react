@@ -20,6 +20,8 @@ Work easily with rethink struture pattern in react.
 
 After install you can open your rethink react-native app and run:
 
+> Creating a Component
+
 ```
 rethink-gen create-component ComponentName
 ```
@@ -34,9 +36,9 @@ this command will generate a `component` like `src/components/ComponentName`
 
 with this following structure:
 
-![Create Component](('./images/ss-create-component.png')
+![Create Component](https://github.com/filiperethink/rethink-react/blob/master/images/ss-create-component.png?raw=true)
 
-> or
+> Creating a Module
 
 ```
 rethink-gen create-module MyModule
@@ -48,33 +50,13 @@ or shorthand
 rethink-gen cm MyModule
 ```
 
-this command will generate a `modules` like `src/components/`
+this command will generate a `modules` like `src/modules/MyModule`
 
 with this following structure:
 
-```
-  src
-  -- modules
-  ---- MyModule
-  ------ actions
-  -------- index.js
+![Create Module](https://github.com/filiperethink/rethink-react/blob/master/images/ss-create-component.png?raw=true)
 
-  ------ components
-  -------- index.js
-
-  ------ reducers
-  -------- MyModuleReducer.js
-  -------- index.js
-
-  ------ screens
-  -------- MyModuleScreen.js
-  -------- styled.js
-
-  ------ types
-  -------- index.js
-```
-
-> and
+> Creating a Redux Store
 
 ```
 rethink-gen store-redux
@@ -88,11 +70,6 @@ rethink-gen sr
 
 this command will generate a `store` folder in `src/`
 
-```
-src
--- store
----- reducers.js
----- store.js
-```
+![Create Store](https://github.com/filiperethink/rethink-react/blob/master/images/ss-create-component.png?raw=true)
 
 Help us...
