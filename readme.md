@@ -7,13 +7,13 @@ Work easily with rethink struture pattern in react.
 #### With YARN
 
 ```
-"yarn add global rethink-react"
+$ yarn add global rethink-react
 ```
 
 #### With NPM
 
 ```
-"npm install -g rethink-react"
+$ npm install -g rethink-react
 ```
 
 ## How work with:
@@ -23,19 +23,19 @@ After install you can open your rethink react-native app and run:
 > Creating a Component
 
 ```
-rethink-gen create-component ComponentName
+$ rethink-gen create-component ComponentName
 ```
 
 or shorthand
 
 ```
-rethink-gen cc ComponentName
+$ rethink-gen cc ComponentName
 ```
 
 can specify type of component
 
 ```
-Usage: rethink-gen create-component ComponentName [options]
+$ rethink-gen create-component ComponentName [options]
 
 Options:
   -pure        create a PureComponent
@@ -52,13 +52,13 @@ with this following structure:
 > Creating a Module
 
 ```
-rethink-gen create-module MyModule
+$ rethink-gen create-module MyModule
 ```
 
 or shorthand
 
 ```
-rethink-gen cm MyModule
+$ rethink-gen cm MyModule
 ```
 
 this command will generate a `modules` like `src/modules/MyModule`
@@ -70,13 +70,13 @@ with this following structure:
 > Creating a Redux Store
 
 ```
-rethink-gen store-redux
+$ rethink-gen store-redux
 ```
 
 or shorthand
 
 ```
-rethink-gen sr
+$ rethink-gen sr
 ```
 
 this command will generate a `store` folder in `src/`
@@ -86,7 +86,7 @@ this command will generate a `store` folder in `src/`
 ### Show Help with Commands Information
 
 ```
-rethink-gen help
+$ rethink-gen help
 ```
 
 ### What you can do:
