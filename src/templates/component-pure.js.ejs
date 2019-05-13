@@ -1,0 +1,24 @@
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { View } from 'react-native';
+
+// Styles
+import { Container, UiText } from './styled';
+
+class <%= props.name %> extends PureComponent {
+  state = {};
+
+  render() {
+    return (
+      <Container>
+        <UiText><%= props.name %></UiText>
+      </Container>
+    );
+  }
+}
+
+<%= props.name %>.defaultProps = {};
+
+<%= props.name %>.propTypes = {};
+
+export default <%= props.name %>;

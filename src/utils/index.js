@@ -10,4 +10,11 @@ const handleScreenName = (fn, string) => {
   return end.indexOf("Screen") === -1 ? `${end}Screen` : end;
 }
 
-module.exports = { handleStrings, handleScreenName }
+const getComponentTemplate = (options = {}) => {
+  const { pure, stateless } = options;
+  if (pure) return 'component-pure.js.ejs';
+  else if (stateless) return 'component-stateless.js.ejs';
+  return 'component.js.ejs';
+}
+
+module.exports = { handleStrings, handleScreenName, getComponentTemplate }
