@@ -54,7 +54,7 @@ this command will generate a `modules` like `src/modules/MyModule`
 
 with this following structure:
 
-![Create Module](https://github.com/filiperethink/rethink-react/blob/master/images/ss-create-component.png?raw=true)
+![Create Module](https://github.com/filiperethink/rethink-react/blob/master/images/ss-create-module.png?raw=true)
 
 > Creating a Redux Store
 
@@ -70,6 +70,6 @@ rethink-gen sr
 
 this command will generate a `store` folder in `src/`
 
-![Create Store](https://github.com/filiperethink/rethink-react/blob/master/images/ss-create-component.png?raw=true)
+![Create Store](https://github.com/filiperethink/rethink-react/blob/master/images/ss-store-redux.png?raw=true)
 
-Help us...
+Help rethink dev's to improve this cli.
