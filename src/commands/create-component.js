@@ -1,4 +1,4 @@
-const { handleStrings } = require('../utils')
+const { handleStrings, getComponentTemplate } = require('../utils')
 const { Locale } = require('../locale')
 
 module.exports = {
@@ -34,7 +34,7 @@ module.exports = {
     }
 
     await generate({
-      template: 'component.js.ejs',
+      template: getComponentTemplate(parameters.options),
       target: `src/components/${name}/${name}.js`,
       props: { name }
     })

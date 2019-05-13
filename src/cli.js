@@ -1,4 +1,5 @@
 const { build } = require('gluegun')
+const { helpMessage } = require('./utils');
 
 /**
  * Create the cli and kick it off
@@ -9,7 +10,16 @@ async function run (argv) {
     .brand('rethink-react')
     .src(__dirname)
     .plugins('./node_modules', { matching: 'rethink-react-*', hidden: true })
-    .help() // provides default for help, h, --help, -h
+    .help({
+      name: 'help',
+      alias: '--h',
+      hidden: true,
+      dashed: true,
+      run: toolbox => toolbox.print.table(
+        helpMessage,
+        { format: 'lean' }
+      )
+    })
     .version() // provides default for version, v, --version, -v
     .create()
 
