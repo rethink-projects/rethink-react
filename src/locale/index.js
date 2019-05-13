@@ -9,7 +9,15 @@ const Locale = {
     exists: 'This MODULE already exists, should override ? 🚧',
     change: 'Please, change the name of your module. 🙏',
     done: 'Was Generated a',
-    override: 'We override the'
+    override: 'We override the',
+  },
+  screen: {
+    name: 'Name of screen must be specified 👮‍‍‍‍️',
+    exists: 'This SCREEN already exists, should override ? 🚧',
+    change: 'Please, change the name of your screen. 🙏',
+    shouldExistModule: 'The MODULE specified should exist before you create a screen 👮‍‍‍‍️',
+    done: 'Was Generated a',
+    override: 'We override the',
   }
 }
 
