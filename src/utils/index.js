@@ -4,4 +4,11 @@ const handleStrings = (fn, string) => {
   return end
 }
 
-module.exports = { handleStrings }
+const getComponentTemplate = (options = {}) => {
+  const { pure, stateless } = options;
+  if (pure) return 'component-pure.js.ejs';
+  else if (stateless) return 'component-stateless.js.ejs';
+  return 'component.js.ejs';
+}
+
+module.exports = { handleStrings, getComponentTemplate }
