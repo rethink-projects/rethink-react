@@ -1,0 +1,19 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { View } from 'react-native';
+
+// Styles
+import { Container, UiText } from './styled';
+
+const <%= props.name %> = props => (
+  <Container>
+    <UiText><%= props.name %></UiText>
+  </Container>
+);
+
+
+<%= props.name %>.defaultProps = {};
+
+<%= props.name %>.propTypes = {};
+
+export default <%= props.name %>;
