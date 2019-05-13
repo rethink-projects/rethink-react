@@ -1,7 +1,8 @@
 const handleStrings = (fn, string) => {
-  const text = fn.trim(string)
-  const end = fn.upperFirst(text)
-  return end
+  const trim = fn.trim(string)
+  const toLower = fn.lowerCase(trim)
+  const text = fn.upperFirst(toLower)
+  return text
 }
 
 module.exports = { handleStrings }

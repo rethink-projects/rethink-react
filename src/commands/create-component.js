@@ -17,17 +17,18 @@ module.exports = {
     const name = handleStrings(strings, parameters.first)
     const PATH = `${filesystem.cwd()}/src/components/${name}`
     const timer = system.startTimer()
+
     if (!name) {
-      error(Locale.needName)
+      error(Locale.component.name)
       return
     }
 
     const pathExists = await filesystem.existsAsync(PATH)
     let result
     if (pathExists === 'dir') {
-      result = await confirm(Locale.componentExists)
+      result = await confirm(Locale.component.exists)
       if (!result) {
-        info(Locale.changeName)
+        info(Locale.component.change)
         return
       }
     }
@@ -56,10 +57,10 @@ module.exports = {
     })
 
     if (result) {
-      success(`${Locale.overrideComponent} ${name} Component 🙈`)
+      success(`${Locale.component.override} ${name} Component 🙈`)
     } else {
       success(
-        `${Locale.doneComponent} ${name} Module in about ${timer()} ms. ⏰`
+        `${Locale.component.done} ${name} Module in about ${timer()} ms. ⏰`
       )
     }
   }
