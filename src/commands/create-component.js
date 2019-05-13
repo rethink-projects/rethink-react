@@ -15,6 +15,7 @@ module.exports = {
       print: { success, error, info, warning }
     } = toolbox
     const name = handleStrings(strings, parameters.first)
+    const flag = parameters.second
     const PATH = `${filesystem.cwd()}/src/components/${name}`
     const timer = system.startTimer()
 
@@ -60,7 +61,7 @@ module.exports = {
       success(`${Locale.component.override} ${name} Component 🙈`)
     } else {
       success(
-        `${Locale.component.done} ${name} Module in about ${timer()} ms. ⏰`
+        `${Locale.component.done} ${name} Component in about ${timer()} ms. ⏰`
       )
     }
   }

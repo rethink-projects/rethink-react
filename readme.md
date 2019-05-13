@@ -16,6 +16,12 @@ Work easily with rethink struture pattern in react.
 "npm install -g rethink-react"
 ```
 
+### GOTCHAS
+
+if need create a component like UserList or CardUser or MenuItem
+is recommended to use `(-)` to separate words.
+ex: `User-List = UserList` at the end.
+
 ## How work with:
 
 After install you can open your rethink react-native app and run:

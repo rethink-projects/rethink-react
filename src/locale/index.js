@@ -12,6 +12,11 @@ const Locale = {
     change: 'Please, change the name of your module. 🙏',
     done: 'Was Generated a',
     override: 'We override the'
+  },
+  compModule: {
+    done: 'The component was generated with success inside module',
+    override: 'The componet was overrided inside module',
+    warning: 'Lets start again...'
   }
 }
 

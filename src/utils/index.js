@@ -1,7 +1,7 @@
 const handleStrings = (fn, string) => {
   const trim = fn.trim(string)
-  const toLower = fn.lowerCase(trim)
-  const text = fn.upperFirst(toLower)
+  const pascal = fn.pascalCase(trim)
+  const text = fn.upperFirst(pascal)
   return text
 }
 
