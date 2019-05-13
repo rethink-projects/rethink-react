@@ -5,3 +5,7 @@ coverage
 .nyc_output
 dist
 build
+
+src/components
+src/modules
+src/store

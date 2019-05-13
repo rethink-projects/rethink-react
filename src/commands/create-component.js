@@ -6,63 +6,75 @@ module.exports = {
   alias: ['cc'],
   run: async toolbox => {
     const {
+      createComponent,
       parameters,
       strings,
-      filesystem,
-      system,
-      prompt: { confirm },
-      template: { generate },
-      print: { success, error, info, warning }
+      system: { run },
+      print: { success },
+      prompt: { confirm, ask },
+      filesystem: { existsAsync, cwd }
     } = toolbox
+
+    // has flag -m or --module
+    const moduleOption = parameters.options.m || parameters.options.module
     const name = handleStrings(strings, parameters.first)
-    const flag = parameters.second
-    const PATH = `${filesystem.cwd()}/src/components/${name}`
-    const timer = system.startTimer()
 
-    if (!name) {
-      error(Locale.component.name)
-      return
-    }
-
-    const pathExists = await filesystem.existsAsync(PATH)
-    let result
-    if (pathExists === 'dir') {
-      result = await confirm(Locale.component.exists)
-      if (!result) {
-        info(Locale.component.change)
-        return
+    if (typeof moduleOption === 'undefined') {
+      let result
+      const COMPONENT_PATH = `${cwd()}/src/components/${name}`
+      const componentPathExists = await existsAsync(COMPONENT_PATH)
+      if (componentPathExists === 'dir') {
+        result = await confirm(Locale.component.exists)
+        if (!result) {
+          info(Locale.component.change)
+          return
+        } else {
+          await createComponent(`${cwd()}/src/components/`, name, true)
+        }
+      } else {
+        await createComponent(`${cwd()}/src/components/`, name)
       }
-    }
-
-    await generate({
-      template: 'component.js.ejs',
-      target: `src/components/${name}/${name}.js`,
-      props: { name }
-    })
-
-    await generate({
-      template: 'index.js.ejs',
-      target: `src/components/${name}/index.js`,
-      props: { name }
-    })
-
-    await generate({
-      template: 'styled.js.ejs',
-      target: `src/components/${name}/styled.js`
-    })
-
-    await generate({
-      template: 'test.js.ejs',
-      target: `src/components/${name}/${name}.test.js`,
-      props: { name }
-    })
-
-    if (result) {
-      success(`${Locale.component.override} ${name} Component 🙈`)
     } else {
-      success(
-        `${Locale.component.done} ${name} Component in about ${timer()} ms. ⏰`
-      )
+      let withouModuleName
+
+      const hasModuleName = typeof moduleOption === 'string'
+      const moduleName = handleStrings(strings, moduleOption)
+      if (!hasModuleName) {
+        const askAge = {
+          type: 'input',
+          name: 'module',
+          message: 'Qual nome do modulo'
+        }
+        withouModuleName = await ask(askAge)
+      }
+      const namedModule = hasModuleName ? moduleName : withouModuleName.module
+      const MODULE_PATH = `${cwd()}/src/modules/${namedModule}/`
+      const modulePathExists = await existsAsync(MODULE_PATH)
+      if (!modulePathExists) {
+        const result = await confirm(Locale.module.notExists)
+        if (!result) {
+          info(`${Locale.compModule.warning}`)
+          return
+        } else {
+          await run(`rethink-gen cm ${namedModule}`, { trim: true })
+          success(Locale.module.success)
+        }
+      }
+      let result
+      const PATH = `${cwd()}/src/modules/${namedModule}/components/${name}`
+      const pathExists = await existsAsync(PATH)
+      if (pathExists === 'dir') {
+        result = await confirm(Locale.component.exists)
+        if (!result) {
+          info(Locale.component.change)
+          return
+        }
+      } else {
+        await createComponent(
+          `${cwd()}/src/modules/${namedModule}/components/`,
+          name
+        )
+      }
     }
   }
 }

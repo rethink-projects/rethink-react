@@ -26,7 +26,7 @@ module.exports = {
     const pathExists = await filesystem.existsAsync(PATH)
     let result
     if (pathExists === 'dir') {
-      result = await confirm(Locale.componentExists)
+      result = await confirm(Locale.module.exists)
       if (!result) {
         info(Locale.module.change)
         return
@@ -77,9 +77,9 @@ module.exports = {
     })
 
     if (result) {
-      success(`${Locale.module.override} ${name} Component Take only`)
+      success(Locale.module.success_overrided)
     } else {
-      success(`${Locale.module.done} ${name} Module in about ${timer()} ms. ⏰`)
+      success(Locale.module.success)
     }
   }
 }
