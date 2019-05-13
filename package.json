@@ -1,6 +1,6 @@
 {
   "name": "rethink-react",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "rethink-react CLI",
   "bin": {
     "rethink-gen": "bin/rethink-react"
