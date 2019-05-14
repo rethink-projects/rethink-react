@@ -10,7 +10,7 @@ module.exports = {
       parameters,
       strings,
       system: { run },
-      print: { success },
+      print: { success, info },
       prompt: { confirm, ask },
       filesystem: { existsAsync, cwd }
     } = toolbox
