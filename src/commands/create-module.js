@@ -64,10 +64,10 @@ module.exports = {
       target: `src/modules/${name}/reducers/${name}Reducer.js`,
       props: { name }
     })
-    // Styled
+    //
     await generate({
-      template: 'styled.js.ejs',
-      target: `src/modules/${name}/screens/styled.js`
+      template: 'styles.js.ejs',
+      target: `src/modules/${name}/screens/${name}ScreenStyle.js`
     })
 
     // Actions Types

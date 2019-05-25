@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 // Styles
-import { Container, UiText } from './styled';
+import { styles } from './<%= props.name %>Style';
 
 const <%= props.name %> = props => (
-  <Container>
-    <UiText><%= props.name %></UiText>
-  </Container>
+  <View>
+    <Text><%= props.name %></Text>
+  </View>
 );
 
 

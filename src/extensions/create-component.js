@@ -27,8 +27,8 @@ module.exports = toolbox => {
     })
 
     await generate({
-      template: 'styled.js.ejs',
-      target: `${path}/${name}/styled.js`
+      template: 'styles.js.ejs',
+      target: `${path}/${name}/${name}Style.js`
     })
 
     await generate({
