@@ -8,6 +8,16 @@ const Locale = {
     done: 'Was Generated a',
     override: 'We override the'
   },
+  reducer: {
+    success: 'Reducer was generated successfully 👌',
+    name: 'Name of reducer must be specified 👮‍‍‍‍️',
+    exists: 'This reducer already exists, should override ? 🚧',
+    notExists: 'Reducer not exist, should create new one?',
+    change: 'Please, change the name of your reducer. 🙏',
+    done: 'Was Generated a',
+    success_overrided: 'Reducer was overrided successfully 👌',
+    success: 'Reducer was generated successfully 👌'
+  },
   module: {
     success: 'Module was generated successfully 👌',
     name: 'Name of module must be specified 👮‍‍‍‍️',

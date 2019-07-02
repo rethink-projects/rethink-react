@@ -1,0 +1,13 @@
+import expect from 'expect';
+import initialState from 'esfera/store/initialState';
+import reducer from './reducer';
+import {  } from './types';
+
+describe('Reducer', () => {
+  it('should handle SOME_TYPE', () => {
+    const red = reducer(initialState, {
+      type: SOME_TYPE,
+    });
+    expect(red).toEqual('Something');
+  });
+});

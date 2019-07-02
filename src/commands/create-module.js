@@ -46,35 +46,13 @@ module.exports = {
       target: `src/modules/${name}/components/index.js`,
       props: { name }
     })
-    // Actions
-    await generate({
-      template: 'module-actions.js.ejs',
-      target: `src/modules/${name}/actions/index.js`,
-      props: { name }
-    })
-    // Combine Reducer
-    await generate({
-      template: 'module-reducers-index.js.ejs',
-      target: `src/modules/${name}/reducers/index.js`,
-      props: { name }
-    })
-    // Reducer
-    await generate({
-      template: 'module-reducers.js.ejs',
-      target: `src/modules/${name}/reducers/${name}Reducer.js`,
-      props: { name }
-    })
-    //
+
+    // Styles
     await generate({
       template: 'styles.js.ejs',
       target: `src/modules/${name}/screens/${name}ScreenStyle.js`
     })
 
-    // Actions Types
-    await generate({
-      template: 'types.js.ejs',
-      target: `src/modules/${name}/types/index.js`
-    })
 
     if (result) {
       success(Locale.module.success_overrided)
