@@ -19,7 +19,8 @@ const helpMessage = [
     'cs',
     'Create a Screen at (Module)/ \n-> Example: create-screen (Screen) -m (Module)'
   ],
-  ['store-redux', 'sr', 'Create a Store at src/']
+  ['store-redux', 'sr', 'Create a Store at src/'],
+  ['create-reducer', 'cr', 'Create a New Reducer at src/store/reducers']
 ]
 
 const handleScreenName = (fn, string) => {
